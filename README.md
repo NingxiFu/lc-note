@@ -1,0 +1,2 @@
+# lc-note
+Leetcode Note
