@@ -48,21 +48,44 @@ class Solution:
  * }
  */
 func deleteDuplicates(head *ListNode) *ListNode {
-    if head == nil {
+    if head == nil { //head空则返回nil
         return nil
     }
-    slow := head
+    slow := head //快慢指针初始化，都指向head
     fast := head
-    for fast != nil{
-        if fast.Val == slow.Val {
-            fast = fast.Next
-        } else{
+    for fast != nil{ //fast遍历链表,slow只记录fast走过的不重复的节点
+        if fast.Val == slow.Val { //若快慢相等说明fast指向的是重复值（因为该题的链表已排序）
+            fast = fast.Next //fast前移，跳过，slow不记录这个相等的
+        } else { //若fast指向的不是重复值，则让slow记录fast目前节点，然后两者前移
             slow.Next = fast
             slow = slow.Next
             fast = fast.Next
         }
     }
-    slow.Next = nil
+    slow.Next = nil //slow已经记录完所有不重复的值，结束链表
     return head
 }
+```
+
+```py
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def deleteDuplicates(self, head: ListNode) -> ListNode:
+        if not head:
+            return head
+        slow = head
+        fast = head
+        while fast:
+            if fast.val == slow.val:
+                fast = fast.next
+            else:
+                slow.next = fast
+                slow = slow.next
+                fast = fast.next
+        slow.next = None
+        return head
 ```
