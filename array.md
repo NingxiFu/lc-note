@@ -130,3 +130,39 @@ class Solution:
                 slow += 1
         return slow
 ```
+### 167. 两数之和 II - 输入有序数组
+[<img width="873" alt="image" src="https://user-images.githubusercontent.com/70481780/215535240-4416d30a-040b-406c-ae51-8f229d6ca28f.png">
+](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
+
+- 两数之和
+- 双指针
+```go
+func twoSum(numbers []int, target int) []int {
+    l, r := 0, len(numbers) - 1
+    for l < r {
+        sum := numbers[l] + numbers[r]
+        if sum == target {
+            return []int{l + 1, r + 1}
+        } else if sum < target {
+            l++
+        } else if sum > target {
+            r--
+        }
+    }
+    return []int{-1, -1}
+}
+```
+```py
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        left = 0
+        right = len(numbers) - 1
+        while left < right:
+            cur = numbers[left] + numbers[right]
+            if cur == target:
+                return [left + 1, right + 1]
+            elif cur > target:
+                right -= 1
+            elif cur < target:
+                left += 1
+```
