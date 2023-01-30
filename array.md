@@ -1,5 +1,5 @@
 # 数组
-## 26. 删除有序数组中的重复项
+### 26. 删除有序数组中的重复项
 [<img width="1006" alt="image" src="https://user-images.githubusercontent.com/70481780/215467608-2741c1ae-5a29-40fd-a06e-a7f39a7f77b6.png">](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
 
 - 快慢指针
@@ -33,7 +33,35 @@ class Solution:
 ```
 
 
-## 83. 删除排序链表中的重复元素
+### 83. 删除排序链表中的重复元素
+[image.png](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)
 - 26的链表版
+- 快慢指针 删除链表的重复节点，注意head空的情况
 
-go1 快慢指针 删除链表的重复节点
+```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func deleteDuplicates(head *ListNode) *ListNode {
+    if head == nil {
+        return nil
+    }
+    slow := head
+    fast := head
+    for fast != nil{
+        if fast.Val == slow.Val {
+            fast = fast.Next
+        } else{
+            slow.Next = fast
+            slow = slow.Next
+            fast = fast.Next
+        }
+    }
+    slow.Next = nil
+    return head
+}
+```
