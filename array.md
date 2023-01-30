@@ -166,3 +166,34 @@ class Solution:
             elif cur < target:
                 left += 1
 ```
+
+### 344. 反转字符串
+[<img width="640" alt="image" src="https://user-images.githubusercontent.com/70481780/215535954-e9b6cf70-5e40-4ad3-9bb0-52b23dc2e5b8.png">
+](https://leetcode.cn/problems/reverse-string/)
+
+- 双指针 
+- 原地改变数组值 反转字符串
+
+```go
+func reverseString(s []byte)  {
+    l, r := 0, len(s) - 1
+    for l < r {
+        s[l], s[r] = s[r], s[l]
+        l++
+        r--
+    }
+}
+```
+```py
+class Solution:
+    def reverseString(self, s: List[str]) -> None:
+        """
+        Do not return anything, modify s in-place instead.
+        """
+        left = 0
+        right = len(s) - 1
+        while left < right:
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
+```
