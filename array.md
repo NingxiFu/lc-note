@@ -34,7 +34,8 @@ class Solution:
 
 
 ### 83. 删除排序链表中的重复元素
-[image.png](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)
+[<img width="678" alt="image" src="https://user-images.githubusercontent.com/70481780/215518648-c93f5c58-af6a-436a-820f-65181ee39ac9.png">
+](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)
 - 26的链表版
 - 快慢指针 删除链表的重复节点，注意head空的情况
 
