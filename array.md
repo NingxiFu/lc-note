@@ -89,3 +89,7 @@ class Solution:
         slow.next = None
         return head
 ```
+
+### 27. 移除元素
+[<img width="726" alt="image" src="https://user-images.githubusercontent.com/70481780/215524236-a06a8310-ec8c-45da-80f0-c4a793818610.png">
+](https://leetcode.cn/problems/remove-element/)
