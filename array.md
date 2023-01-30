@@ -3,6 +3,7 @@
 [<img width="1006" alt="image" src="https://user-images.githubusercontent.com/70481780/215467608-2741c1ae-5a29-40fd-a06e-a7f39a7f77b6.png">](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
 
 - 快慢指针
+- 删除有序数组里重复的项
 ```go
 func removeDuplicates(nums []int) int {
     if len(nums) == 0{
@@ -37,7 +38,9 @@ class Solution:
 [<img width="678" alt="image" src="https://user-images.githubusercontent.com/70481780/215518648-c93f5c58-af6a-436a-820f-65181ee39ac9.png">
 ](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)
 - 26题的链表版
-- 快慢指针 删除链表的重复节点，注意head空的情况
+- 快慢指针 
+- 删除链表的重复节点
+- 注意head空的情况
 
 ```go
 /**
@@ -95,7 +98,9 @@ class Solution:
 ](https://leetcode.cn/problems/remove-element/)
 
 
-- 快慢指针 移除指定值 快指针遍历 慢指针逐个改动原数组
+- 快慢指针 
+- 移除数组里的指定值 
+- 快指针遍历 慢指针逐个改动原数组
 ```go
 func removeElement(nums []int, val int) int {
     slow := 0
