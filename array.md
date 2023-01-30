@@ -93,3 +93,18 @@ class Solution:
 ### 27. 移除元素
 [<img width="726" alt="image" src="https://user-images.githubusercontent.com/70481780/215524236-a06a8310-ec8c-45da-80f0-c4a793818610.png">
 ](https://leetcode.cn/problems/remove-element/)
+
+
+- 快慢指针 数组
+```py
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        slow = 0
+        for i in range(len(nums)):
+            if nums[i] == val:
+                continue
+            else:
+                nums[slow] = nums[i]
+                slow += 1
+        return slow
+```
