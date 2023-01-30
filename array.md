@@ -96,6 +96,22 @@ class Solution:
 
 
 - 快慢指针 数组
+```go
+func removeElement(nums []int, val int) int {
+    slow := 0
+    fast := 0
+    for fast < len(nums) {
+        if nums[fast] == val {  //等于val要删掉的直接不管
+            fast++
+        } else {                //不删掉的直接往slow上加，slow和fast再后移
+            nums[slow] = nums[fast]
+            slow++
+            fast++
+        }
+    }
+    return slow
+}
+```
 ```py
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
