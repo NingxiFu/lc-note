@@ -40,7 +40,8 @@ class Solution:
 - 26题的链表版
 - 快慢指针 
 - 删除链表的重复节点
-- 注意head空的情况
+- 注意head空的边界
+- fast遍历链表,slow只记录fast走过的不重复的节点
 
 ```go
 /**
@@ -100,7 +101,7 @@ class Solution:
 
 - 快慢指针 
 - 移除数组里的指定值 
-- 快指针遍历 慢指针逐个改动原数组
+- 快指针遍历 慢指针逐个改动原数组（fast遍历数组,slow只写fast走过的不重复的值）
 ```go
 func removeElement(nums []int, val int) int {
     slow := 0
