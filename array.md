@@ -197,3 +197,6 @@ class Solution:
             left += 1
             right -= 1
 ```
+### 5. 最长回文子串
+[<img width="602" alt="image" src="https://user-images.githubusercontent.com/70481780/215538809-a3b63cac-12a5-43d3-a777-070efba79b3c.png">
+](https://leetcode.cn/problems/longest-palindromic-substring/)
