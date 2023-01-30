@@ -36,7 +36,7 @@ class Solution:
 ### 83. 删除排序链表中的重复元素
 [<img width="678" alt="image" src="https://user-images.githubusercontent.com/70481780/215518648-c93f5c58-af6a-436a-820f-65181ee39ac9.png">
 ](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)
-- 26的链表版
+- 26题的链表版
 - 快慢指针 删除链表的重复节点，注意head空的情况
 
 ```go
@@ -95,7 +95,7 @@ class Solution:
 ](https://leetcode.cn/problems/remove-element/)
 
 
-- 快慢指针 数组
+- 快慢指针 移除指定值 快指针遍历 慢指针逐个改动原数组
 ```go
 func removeElement(nums []int, val int) int {
     slow := 0
