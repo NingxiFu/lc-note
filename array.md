@@ -48,21 +48,21 @@ class Solution:
  * }
  */
 func deleteDuplicates(head *ListNode) *ListNode {
-    if head == nil { //head空则返回nil
+    if head == nil {                //head空则返回nil
         return nil
     }
-    slow := head //快慢指针初始化，都指向head
+    slow := head                    //快慢指针初始化，都指向head
     fast := head
-    for fast != nil{ //fast遍历链表,slow只记录fast走过的不重复的节点
-        if fast.Val == slow.Val { //若快慢相等说明fast指向的是重复值（因为该题的链表已排序）
-            fast = fast.Next //fast前移，跳过，slow不记录这个相等的
-        } else { //若fast指向的不是重复值，则让slow记录fast目前节点，然后两者前移
+    for fast != nil{                //fast遍历链表,slow只记录fast走过的不重复的节点
+        if fast.Val == slow.Val {   //若快慢相等说明fast指向的是重复值（因为该题的链表已排序）
+            fast = fast.Next        //fast前移，跳过，slow不记录这个相等的
+        } else {                    //若fast指向的不是重复值，则让slow记录fast目前节点，然后两者前移
             slow.Next = fast
             slow = slow.Next
             fast = fast.Next
         }
     }
-    slow.Next = nil //slow已经记录完所有不重复的值，结束链表
+    slow.Next = nil                 //slow已经记录完所有不重复的值，结束链表
     return head
 }
 ```
