@@ -200,3 +200,60 @@ class Solution:
 ### 5. 最长回文子串
 [<img width="602" alt="image" src="https://user-images.githubusercontent.com/70481780/215538809-a3b63cac-12a5-43d3-a777-070efba79b3c.png">
 ](https://leetcode.cn/problems/longest-palindromic-substring/)
+- 双指针从中间往外侧走
+- 回文子串长度分奇偶，遍历中心点时，每个位置作为奇数的中点和偶数的中点都试一次
+- 不断更新最长子串
+```go
+func longestPalindrome(s string) string {
+    res := ""
+    l, r := 0, 0 //双指针，指目前子串的左右边界
+    for i := 0; i < len(s); i++ {
+        l, r = i, i //回文字符串长度奇数，从同一个数开始扩展
+        for l >= 0 && r < len(s) && s[l] == s[r] {
+            l--
+            r++
+        }
+        if r - l + 1 > len(res) + 2 { //出循环时，两个指针指向子串左右多走一步的位置
+            res = s[l + 1: r]
+        }
+        l, r = i, i + 1 //回文字符串长度偶数，从两个相邻数开始扩展
+        for l >= 0 && r < len(s) && s[l] == s[r] {
+            l--
+            r++
+        }
+        if r - l + 1 > len(res) + 2 {
+            res = s[l + 1: r]
+        }
+    }
+    return res
+}
+```
+python贴个之前写的老版本
+```py
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        if len(s) <= 1:
+            return s
+        if len(s) == 2:
+            if s[0] == s[1]:
+                return s
+            else:
+                return s[0]
+        max_sub = s[0]
+        for mid in range(0,len(s) - 1):
+            left = mid
+            right = mid
+            while left >= 0 and right <= len(s) - 1 and s[left] == s[right]:
+                left -= 1
+                right += 1
+            if right - left - 1 > len(max_sub): #这里right和left都比实际符合条件的子串向外多走了一步
+                max_sub = s[left + 1 : right]
+            left_1 = mid
+            right_1 = mid + 1
+            while left_1 >= 0 and right_1 <= len(s) - 1 and s[left_1] == s[right_1]:
+                left_1 -= 1
+                right_1 += 1
+            if right_1 - left_1 - 1 > len(max_sub):
+                max_sub = s[left_1 + 1 : right_1]
+        return max_sub
+```
