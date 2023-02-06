@@ -34,7 +34,7 @@ func main() {
     }
 }
 ```
-### Byte & Rune
+### Byte & Rune (no char)
 - In Go, there is no char data type. It uses byte and rune to represent character values.
 - Golang has integer types called byte and rune that are aliases for uint8 and int32 data types, respectively.
 - The byte data type represents ASCII characters while the rune data type represents a more broader set of Unicode characters that are encoded in UTF-8 format.
