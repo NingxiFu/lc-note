@@ -1,9 +1,12 @@
 # 数组
-### 26. 删除有序数组中的重复项
-[<img width="1006" alt="image" src="https://user-images.githubusercontent.com/70481780/215467608-2741c1ae-5a29-40fd-a06e-a7f39a7f77b6.png">](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
+<a name="q7Co3"></a>
+### [26. 删除有序数组中的重复项](https://leetcode.cn/problems/remove-duplicates-from-sorted-array/)
+![](https://user-images.githubusercontent.com/70481780/215467608-2741c1ae-5a29-40fd-a06e-a7f39a7f77b6.png#height=831&id=Ay1AK&originHeight=1662&originWidth=2012&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=1006)
 
 - 快慢指针
 - 删除有序数组里重复的项
+<a name="QqSmf"></a>
+##### go
 ```go
 func removeDuplicates(nums []int) int {
     if len(nums) == 0{
@@ -19,8 +22,9 @@ func removeDuplicates(nums []int) int {
     return slow
 }
 ```
-
-```py
+<a name="r83UL"></a>
+##### py
+```python
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         slow = 0
@@ -33,16 +37,16 @@ class Solution:
         return slow + 1
 ```
 
+<a name="dWFI0"></a>
+### [83. 删除排序链表中的重复元素](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)[<br />](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)![](https://user-images.githubusercontent.com/70481780/215518648-c93f5c58-af6a-436a-820f-65181ee39ac9.png#height=629&id=FDvfK&originHeight=1258&originWidth=1356&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=678)
+<a name="uKtGx"></a>
+##### go
 
-### 83. 删除排序链表中的重复元素
-[<img width="678" alt="image" src="https://user-images.githubusercontent.com/70481780/215518648-c93f5c58-af6a-436a-820f-65181ee39ac9.png">
-](https://leetcode.cn/problems/remove-duplicates-from-sorted-list/)
 - 26题的链表版
-- 快慢指针 
+- 快慢指针
 - 删除链表的重复节点
 - 注意head空的边界
 - fast遍历链表,slow只记录fast走过的不重复的节点
-
 ```go
 /**
  * Definition for singly-linked list.
@@ -70,8 +74,9 @@ func deleteDuplicates(head *ListNode) *ListNode {
     return head
 }
 ```
-
-```py
+<a name="AKqkj"></a>
+##### py
+```python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -94,13 +99,13 @@ class Solution:
         return head
 ```
 
-### 27. 移除元素
-[<img width="726" alt="image" src="https://user-images.githubusercontent.com/70481780/215524236-a06a8310-ec8c-45da-80f0-c4a793818610.png">
-](https://leetcode.cn/problems/remove-element/)
+<a name="B17yU"></a>
+### [27. 移除元素](https://leetcode.cn/problems/remove-element/)[<br />](https://leetcode.cn/problems/remove-element/)![](https://user-images.githubusercontent.com/70481780/215524236-a06a8310-ec8c-45da-80f0-c4a793818610.png#height=848&id=phIZT&originHeight=1696&originWidth=1452&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=726)
+<a name="l6SQn"></a>
+##### go
 
-
-- 快慢指针 
-- 移除数组里的指定值 
+- 快慢指针
+- 移除数组里的指定值
 - 快指针遍历 慢指针逐个改动原数组（fast遍历数组,slow只写fast走过的不重复的值）
 ```go
 func removeElement(nums []int, val int) int {
@@ -118,7 +123,9 @@ func removeElement(nums []int, val int) int {
     return slow
 }
 ```
-```py
+<a name="iWg0H"></a>
+##### py
+```python
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         slow = 0
@@ -130,9 +137,10 @@ class Solution:
                 slow += 1
         return slow
 ```
-### 167. 两数之和 II - 输入有序数组
-[<img width="873" alt="image" src="https://user-images.githubusercontent.com/70481780/215535240-4416d30a-040b-406c-ae51-8f229d6ca28f.png">
-](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)
+<a name="KYnww"></a>
+### [167. 两数之和 II - 输入有序数组](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)[<br />](https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/)![](https://user-images.githubusercontent.com/70481780/215535240-4416d30a-040b-406c-ae51-8f229d6ca28f.png#height=638&id=YAMsQ&originHeight=1276&originWidth=1746&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=873)
+<a name="pZ0QP"></a>
+##### go
 
 - 两数之和
 - 双指针
@@ -152,7 +160,9 @@ func twoSum(numbers []int, target int) []int {
     return []int{-1, -1}
 }
 ```
-```py
+<a name="wSBjP"></a>
+##### py
+```python
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         left = 0
@@ -166,14 +176,13 @@ class Solution:
             elif cur < target:
                 left += 1
 ```
+<a name="OQoVt"></a>
+### [344. 反转字符串](https://leetcode.cn/problems/reverse-string/)[<br />](https://leetcode.cn/problems/reverse-string/)![](https://user-images.githubusercontent.com/70481780/215535954-e9b6cf70-5e40-4ad3-9bb0-52b23dc2e5b8.png#height=385&id=YjwoH&originHeight=770&originWidth=1280&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=640)
+<a name="yNuOe"></a>
+##### go
 
-### 344. 反转字符串
-[<img width="640" alt="image" src="https://user-images.githubusercontent.com/70481780/215535954-e9b6cf70-5e40-4ad3-9bb0-52b23dc2e5b8.png">
-](https://leetcode.cn/problems/reverse-string/)
-
-- 双指针 
+- 双指针
 - 原地改变数组值 反转字符串
-
 ```go
 func reverseString(s []byte)  {
     l, r := 0, len(s) - 1
@@ -184,7 +193,9 @@ func reverseString(s []byte)  {
     }
 }
 ```
-```py
+<a name="kqc3y"></a>
+##### py
+```python
 class Solution:
     def reverseString(self, s: List[str]) -> None:
         """
@@ -197,9 +208,11 @@ class Solution:
             left += 1
             right -= 1
 ```
-### 5. 最长回文子串
-[<img width="602" alt="image" src="https://user-images.githubusercontent.com/70481780/215538809-a3b63cac-12a5-43d3-a777-070efba79b3c.png">
-](https://leetcode.cn/problems/longest-palindromic-substring/)
+<a name="OdsN6"></a>
+### [5. 最长回文子串](https://leetcode.cn/problems/longest-palindromic-substring/)[<br />](https://leetcode.cn/problems/longest-palindromic-substring/)![](https://user-images.githubusercontent.com/70481780/215538809-a3b63cac-12a5-43d3-a777-070efba79b3c.png#height=401&id=Dl8Ry&originHeight=802&originWidth=1204&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=&width=602)
+<a name="TRbyY"></a>
+##### go
+
 - 双指针从中间往外侧走
 - 回文子串长度分奇偶，遍历中心点时，每个位置作为奇数的中点和偶数的中点都试一次
 - 不断更新最长子串
@@ -228,8 +241,11 @@ func longestPalindrome(s string) string {
     return res
 }
 ```
-python贴个之前写的老版本
-```py
+<a name="xQ9KF"></a>
+##### py
+
+- python贴个之前写的老版本
+```python
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         if len(s) <= 1:
