@@ -3,12 +3,78 @@
 [<img width="622" alt="image" src="https://user-images.githubusercontent.com/70481780/217740599-5b7873ee-03a8-4dbc-8fab-ac9ff65275f1.png">](https://leetcode.cn/problems/minimum-window-substring/)
 
 #### go
+- 思路同下面py的注释
+- 注意go语法：是否在字典里，以及range，赋值
 ```go
-
+func minWindow(s string, t string) string {
+    l, r := 0, 0
+    need := map[byte]int{}
+    window := map[byte]int{}
+    valid := 0
+    start, minl := 0, math.MaxInt
+    for i, _ := range t {
+        need[t[i]]++
+    }
+    for r, _ = range s {
+        window[s[r]]++
+        if _, ok := need[s[r]]; ok { //看s[r]是否在字典need里
+            if window[s[r]] == need[s[r]] {
+                valid++
+            }
+        }
+        for valid == len(need) {
+            if r - l + 1 < minl {
+                start = l
+                minl = r - l + 1
+            }
+            if _, ok := need[s[l]]; ok {
+                if window[s[l]] == need[s[l]] {
+                    valid--
+                }
+            }
+            window[s[l]]--
+            l++
+        }
+    }
+    if minl == math.MaxInt {
+        return ""
+    } else {
+        return s[start: start + minl]
+    }
+}
 ```
 #### py
 ```py
-
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        need = {} #目标字串包括目标字母对应个数的字典
+        window = {} #目前字串包含目标字母对应个数的字典
+        valid = 0 #目前字串含有的符合条件的字母的个数
+        left, right = 0, 0
+        start = 0 #最短符合条件字串的开始位置
+        sub_len = inf #最短符合条件字串的长度
+        for a in t: #把目标子串的字典建好
+            need[a] = need.get(a, 0) + 1
+        while right < len(s): #right走完整个s大字符串
+            if s[right] in need: #滑动窗口右侧加入元素，看是否是目标元素之一
+                window[s[right]] = window.get(s[right], 0) + 1
+                if window[s[right]] == need[s[right]]: #某字母符合要求，valid加一
+                    valid += 1
+            right += 1
+            while len(need) == valid: #目前字串已经符合要求，就一直pop左边，直到缺一个不符合条件
+                if right - left < sub_len: #算符合条件时候的子串长度是否是最短的，若是，更新
+                    start = left
+                    sub_len = right - left
+                a = s[left]
+                if a in need: #若左侧出去的元素是目标字母之一
+                    if window[a] == need[a]: #比较两个计数以后再减window对应数量和可能valid减一
+                        valid -= 1
+                    window[a] = window.get(a, 0) - 1
+                left += 1
+        if sub_len == inf: #若没找到符合子串，返回空
+            return ''   
+        else:
+            return s[start : start + sub_len]
 ```
 ### 567. 字符串的排列
 [<img width="726" alt="image" src="https://user-images.githubusercontent.com/70481780/216898826-58bb40dd-7fa6-48fd-a911-3c03684b8a20.png">
