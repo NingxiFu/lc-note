@@ -33,7 +33,7 @@ func checkInclusion(s1 string, s2 string) bool {
     return false
 }
 ```
-- 优化 用26定长数组 字符-'a'是下标
+- 优化, 用26定长数组, (字符-'a')是下标
 ```go
 func checkInclusion(s1 string, s2 string) bool {
     if len(s1) > len(s2) {return false}
